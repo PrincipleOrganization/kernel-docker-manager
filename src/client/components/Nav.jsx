@@ -63,7 +63,7 @@ class NavBar extends Component {
       <Navbar fixedTop>
         <Navbar.Header>
           <Navbar.Brand>
-            Kernel Docker Manager
+            KDM
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
