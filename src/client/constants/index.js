@@ -1,3 +1,3 @@
 export default {
-  BRAND_COLOR: '#588C73',
+  BRAND_COLOR: '#F7C873',
 };
