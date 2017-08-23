@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  padding-top: 70px;
+}
+
+.navbar {
+  border: 0;
+}
+
+.login-page {
+  img {
+    height: 180px;
+    display: block;
+    margin: auto;
+  }
+
+  h2 {
+    text-align: center;
+    color: $brand-primary;
+  }
+
+  form {
+    margin-top: 10%;
+    margin-right: 10%;
+    margin-left: 10%;
+
+    .btn {
+      width: 100%;
+    }
+  }
+}
+
+.page-title {
+  color: $brand-primary;
+}
+
+.tab-elements {
+  border-style: solid;
+  border-width: 1px;
+  border-top-width: 0;
+  border-color: $nav-tabs-border-color;
+
+  .table-responsive {
+    border-top-width: 0;
+  }
+
+  table {
+    border-top-width: 0;
+  }
+
+  .btn-toolbar {
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+  }
+}
+
+.blank-place {
+  padding-bottom: 20px;
+}
+
+.not-found {
+  text-align: center;
+  margin-top: 20%;
+  font-weight: bold;
+
+  h1 {
+    color: $brand-primary;
+  }
+}
+
+.icon {
+  padding-right: 5px;
+}
+
+.file-upload {
+  .annotation {
+    margin-bottom: 20px;
+  }
+
+  .btn-file-upload {
+    font-size: 14.5px;
+  }
+
+  .spinner {
+    margin: auto;
+    width: 60px;
+    margin-top: 15px;
+  }
+
+  .footer-file-upload {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: $brand-primary;
+  }
+}
+
+.spinner {
+  margin: auto;
+  width: 60px;
+  margin-top: 50px;
+}
