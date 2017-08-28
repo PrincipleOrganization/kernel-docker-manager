@@ -125,10 +125,8 @@ class Containers extends Component {
         const { id, name, image, template, status } = element;
         const imageData = tables.getTableElementById(images, image);
         let imageName = image;
-        let imageTag = '';
         if (imageData) {
-          imageName = imageData.name;
-          imageTag = imageData.tag;
+          imageName = `${imageData.name}:${imageData.tag}`;
         }
 
         const templateData = tables.getTableElementById(templates, template);
@@ -144,7 +142,7 @@ class Containers extends Component {
             onDoubleClick={this.handleDoubleClick}
           >
             <td>{name}</td>
-            <td>{`${imageName}:${imageTag}`}</td>
+            <td>{imageName}</td>
             <td>{templateName}</td>
             <td>{status}</td>
           </tr>

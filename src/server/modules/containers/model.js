@@ -102,7 +102,7 @@ export default class Container {
     return { container: {}, messages };
   }
 
-  static createContainerFromHost(args) {
+  static async createContainerFromHost(args) {
     db.read();
 
     const containerDb = db.get(TABLE).find({ name: args.name }).value();
@@ -113,7 +113,8 @@ export default class Container {
     let container = new Container({ ...args, auto: true });
     const messages = container.validate();
     if (messages.length === 0) {
-      if (container.isCurrentContainer()) {
+      const currentContainer = await container.isCurrentContainer();
+      if (currentContainer) {
         return { container: {}, messages: [] };
       }
       container = container.toJSON();
@@ -250,7 +251,7 @@ export default class Container {
     const dockerContainers = await docker.listContainers({ all: true });
     for (const dockerContainer of dockerContainers) {
       const name = dockerContainer.Names[0].split('/')[1].replace(/-/g, ' ');
-      const result = Container.createContainerFromHost({
+      const result = await Container.createContainerFromHost({
         name,
         image: dockerContainer.Image,
         status: dockerContainer.State,
@@ -270,7 +271,6 @@ export default class Container {
         const info = await docker.inspect(this.containerId);
         const inspectedHostname = info.Config.Hostname;
         if (hostname === inspectedHostname) {
-          const hostImage = info.Config.Image;
           return true;
         }
       } catch (e) {
